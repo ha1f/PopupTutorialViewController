@@ -77,6 +77,8 @@ final class PopupTutorialUsingCollectionView: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        
+        // update itemSize to match with the size of collectionView.
         if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.itemSize = collectionView.bounds.size
         }
@@ -115,9 +117,8 @@ extension PopupTutorialUsingCollectionView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PopupTutorialCollectionViewCell.reuseIdentifier, for: indexPath) as? PopupTutorialCollectionViewCell else {
-            return UICollectionViewCell()
-        }
+        let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: PopupTutorialCollectionViewCell.reuseIdentifier, for: indexPath) as? PopupTutorialCollectionViewCell)
+            ?? PopupTutorialCollectionViewCell()
         cell.setup(viewControllers[indexPath.row], toParent: self)
         return cell
     }

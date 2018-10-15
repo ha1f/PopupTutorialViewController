@@ -14,7 +14,11 @@ final class PopupTutorialCollectionViewCell: UICollectionViewCell {
     /// ViewController controlling contentView.
     private weak var _contentViewController: UIViewController?
     
+    /// Setup cell using ViewController.
     /// Please pass ViewController controlling this collectionView to set as parent.
+    ///
+    /// - parameter viewController: UIViewController to add its view as content.
+    /// - parameter parentViewController: UIViewController to set to viewController's parent.
     func setup(_ viewController: UIViewController, toParent parentViewController: UIViewController) {
         parentViewController.addChild(viewController)
         
