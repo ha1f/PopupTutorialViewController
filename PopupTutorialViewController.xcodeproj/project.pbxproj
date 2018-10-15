@@ -13,6 +13,15 @@
 		56179D46216F34610092106A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56179D45216F34610092106A /* Assets.xcassets */; };
 		56179D49216F34610092106A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56179D47216F34610092106A /* LaunchScreen.storyboard */; };
 		56179D54216F34610092106A /* PopupTutorialViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56179D53216F34610092106A /* PopupTutorialViewControllerTests.swift */; };
+		56179D5F216F34810092106A /* PopupTutorialUsingPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56179D5E216F34810092106A /* PopupTutorialUsingPageController.swift */; };
+		56179D61216F35030092106A /* PopupTutorialUsingPageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56179D60216F35030092106A /* PopupTutorialUsingPageController.xib */; };
+		56179D63216F36DC0092106A /* DefaultTutorialContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56179D62216F36DC0092106A /* DefaultTutorialContentViewController.xib */; };
+		56179D65216F36E70092106A /* DefaultTutorialContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56179D64216F36E70092106A /* DefaultTutorialContentViewController.swift */; };
+		56179D69216F375F0092106A /* fish.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 56179D68216F375F0092106A /* fish.jpg */; };
+		56179D6B21704C0F0092106A /* PredefinedPageViewControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56179D6A21704C0F0092106A /* PredefinedPageViewControllerDataSource.swift */; };
+		56179D6D217438D90092106A /* PopupTutorialUsingCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56179D6C217438D90092106A /* PopupTutorialUsingCollectionView.xib */; };
+		56179D6F217438E40092106A /* PopupTutorialUsingCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56179D6E217438E40092106A /* PopupTutorialUsingCollectionView.swift */; };
+		56179D7721745F390092106A /* PopupTutorialCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56179D7621745F390092106A /* PopupTutorialCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +45,15 @@
 		56179D4F216F34610092106A /* PopupTutorialViewControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PopupTutorialViewControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		56179D53216F34610092106A /* PopupTutorialViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupTutorialViewControllerTests.swift; sourceTree = "<group>"; };
 		56179D55216F34610092106A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56179D5E216F34810092106A /* PopupTutorialUsingPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupTutorialUsingPageController.swift; sourceTree = "<group>"; };
+		56179D60216F35030092106A /* PopupTutorialUsingPageController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopupTutorialUsingPageController.xib; sourceTree = "<group>"; };
+		56179D62216F36DC0092106A /* DefaultTutorialContentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DefaultTutorialContentViewController.xib; sourceTree = "<group>"; };
+		56179D64216F36E70092106A /* DefaultTutorialContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTutorialContentViewController.swift; sourceTree = "<group>"; };
+		56179D68216F375F0092106A /* fish.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fish.jpg; sourceTree = "<group>"; };
+		56179D6A21704C0F0092106A /* PredefinedPageViewControllerDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredefinedPageViewControllerDataSource.swift; sourceTree = "<group>"; };
+		56179D6C217438D90092106A /* PopupTutorialUsingCollectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupTutorialUsingCollectionView.xib; sourceTree = "<group>"; };
+		56179D6E217438E40092106A /* PopupTutorialUsingCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupTutorialUsingCollectionView.swift; sourceTree = "<group>"; };
+		56179D7621745F390092106A /* PopupTutorialCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupTutorialCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,11 +95,13 @@
 		56179D3D216F34600092106A /* PopupTutorialViewController */ = {
 			isa = PBXGroup;
 			children = (
+				56179D74217456150092106A /* PopupTutorialUsingCollectionView */,
+				56179D73217455E20092106A /* PopupTutorialUsingPageController */,
+				56179D72217455860092106A /* TutorialContent */,
+				56179D75217456410092106A /* Initial */,
+				56179D712174556D0092106A /* Launch */,
+				56179D70217455520092106A /* Resources */,
 				56179D3E216F34600092106A /* AppDelegate.swift */,
-				56179D40216F34600092106A /* ViewController.swift */,
-				56179D42216F34600092106A /* Main.storyboard */,
-				56179D45216F34610092106A /* Assets.xcassets */,
-				56179D47216F34610092106A /* LaunchScreen.storyboard */,
 				56179D4A216F34610092106A /* Info.plist */,
 			);
 			path = PopupTutorialViewController;
@@ -94,6 +114,61 @@
 				56179D55216F34610092106A /* Info.plist */,
 			);
 			path = PopupTutorialViewControllerTests;
+			sourceTree = "<group>";
+		};
+		56179D70217455520092106A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				56179D45216F34610092106A /* Assets.xcassets */,
+				56179D68216F375F0092106A /* fish.jpg */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		56179D712174556D0092106A /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				56179D47216F34610092106A /* LaunchScreen.storyboard */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		56179D72217455860092106A /* TutorialContent */ = {
+			isa = PBXGroup;
+			children = (
+				56179D62216F36DC0092106A /* DefaultTutorialContentViewController.xib */,
+				56179D64216F36E70092106A /* DefaultTutorialContentViewController.swift */,
+			);
+			path = TutorialContent;
+			sourceTree = "<group>";
+		};
+		56179D73217455E20092106A /* PopupTutorialUsingPageController */ = {
+			isa = PBXGroup;
+			children = (
+				56179D60216F35030092106A /* PopupTutorialUsingPageController.xib */,
+				56179D5E216F34810092106A /* PopupTutorialUsingPageController.swift */,
+				56179D6A21704C0F0092106A /* PredefinedPageViewControllerDataSource.swift */,
+			);
+			path = PopupTutorialUsingPageController;
+			sourceTree = "<group>";
+		};
+		56179D74217456150092106A /* PopupTutorialUsingCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				56179D6E217438E40092106A /* PopupTutorialUsingCollectionView.swift */,
+				56179D6C217438D90092106A /* PopupTutorialUsingCollectionView.xib */,
+				56179D7621745F390092106A /* PopupTutorialCollectionViewCell.swift */,
+			);
+			path = PopupTutorialUsingCollectionView;
+			sourceTree = "<group>";
+		};
+		56179D75217456410092106A /* Initial */ = {
+			isa = PBXGroup;
+			children = (
+				56179D42216F34600092106A /* Main.storyboard */,
+				56179D40216F34600092106A /* ViewController.swift */,
+			);
+			path = Initial;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,9 +252,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56179D63216F36DC0092106A /* DefaultTutorialContentViewController.xib in Resources */,
 				56179D49216F34610092106A /* LaunchScreen.storyboard in Resources */,
 				56179D46216F34610092106A /* Assets.xcassets in Resources */,
 				56179D44216F34600092106A /* Main.storyboard in Resources */,
+				56179D61216F35030092106A /* PopupTutorialUsingPageController.xib in Resources */,
+				56179D69216F375F0092106A /* fish.jpg in Resources */,
+				56179D6D217438D90092106A /* PopupTutorialUsingCollectionView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,8 +276,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56179D6B21704C0F0092106A /* PredefinedPageViewControllerDataSource.swift in Sources */,
+				56179D7721745F390092106A /* PopupTutorialCollectionViewCell.swift in Sources */,
+				56179D65216F36E70092106A /* DefaultTutorialContentViewController.swift in Sources */,
+				56179D6F217438E40092106A /* PopupTutorialUsingCollectionView.swift in Sources */,
 				56179D41216F34600092106A /* ViewController.swift in Sources */,
 				56179D3F216F34600092106A /* AppDelegate.swift in Sources */,
+				56179D5F216F34810092106A /* PopupTutorialUsingPageController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

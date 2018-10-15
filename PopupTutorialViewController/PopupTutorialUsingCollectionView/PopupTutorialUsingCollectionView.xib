@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopupTutorialUsingCollectionView" customModule="PopupTutorialViewController" customModuleProvider="target">
+            <connections>
+                <outlet property="closeButton" destination="87z-2V-htE" id="E2B-pk-kPU"/>
+                <outlet property="collectionView" destination="rCY-gZ-vtS" id="3mc-mT-K0e"/>
+                <outlet property="containerView" destination="oiG-EW-VSM" id="Jkp-UN-Bfr"/>
+                <outlet property="pageControl" destination="HQX-60-GrV" id="g1s-j8-365"/>
+                <outlet property="view" destination="iN0-l3-epB" id="KX5-Ig-GXu"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oiG-EW-VSM">
+                    <rect key="frame" x="67.5" y="136" width="240" height="395"/>
+                    <subviews>
+                        <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="HQX-60-GrV">
+                            <rect key="frame" x="70" y="358" width="100" height="37"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="37" id="2wU-xk-X7z"/>
+                                <constraint firstAttribute="width" constant="100" id="8ep-iI-37W"/>
+                            </constraints>
+                            <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="currentPageIndicatorTintColor" white="0.0" alpha="0.8034771127" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </pageControl>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="rCY-gZ-vtS">
+                            <rect key="frame" x="0.0" y="0.0" width="240" height="350"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="350" id="1C4-dd-q74"/>
+                                <constraint firstAttribute="width" constant="240" id="Hmj-tx-KZQ"/>
+                            </constraints>
+                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yYf-Zb-o6i">
+                                <size key="itemSize" width="50" height="50"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87z-2V-htE">
+                            <rect key="frame" x="205" y="0.0" width="30" height="48"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                            <state key="normal" title="✗">
+                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="rCY-gZ-vtS" secondAttribute="trailing" id="0bG-MF-4g5"/>
+                        <constraint firstItem="87z-2V-htE" firstAttribute="top" secondItem="oiG-EW-VSM" secondAttribute="top" id="9S9-Lx-86G"/>
+                        <constraint firstItem="HQX-60-GrV" firstAttribute="top" secondItem="rCY-gZ-vtS" secondAttribute="bottom" constant="8" id="NpC-yP-mPr"/>
+                        <constraint firstAttribute="bottom" secondItem="HQX-60-GrV" secondAttribute="bottom" id="Qbs-dj-O87"/>
+                        <constraint firstAttribute="trailing" secondItem="87z-2V-htE" secondAttribute="trailing" constant="5" id="Sa9-vN-Pba"/>
+                        <constraint firstItem="HQX-60-GrV" firstAttribute="centerX" secondItem="oiG-EW-VSM" secondAttribute="centerX" id="g2o-RV-QeN"/>
+                        <constraint firstItem="rCY-gZ-vtS" firstAttribute="top" secondItem="oiG-EW-VSM" secondAttribute="top" id="k4W-U6-qiv"/>
+                        <constraint firstItem="rCY-gZ-vtS" firstAttribute="leading" secondItem="oiG-EW-VSM" secondAttribute="leading" id="rTA-4g-1AS"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.79615977112676062" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="oiG-EW-VSM" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ByQ-Sf-vXg"/>
+                <constraint firstItem="oiG-EW-VSM" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="RaO-U9-JxR"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>
+        </view>
+    </objects>
+</document>
