@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,10 +24,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oiG-EW-VSM">
-                    <rect key="frame" x="67.5" y="136" width="240" height="395"/>
+                    <rect key="frame" x="30" y="136" width="315" height="395"/>
                     <subviews>
                         <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="HQX-60-GrV">
-                            <rect key="frame" x="70" y="358" width="100" height="37"/>
+                            <rect key="frame" x="107.5" y="358" width="100" height="37"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="37" id="2wU-xk-X7z"/>
                                 <constraint firstAttribute="width" constant="100" id="8ep-iI-37W"/>
@@ -36,11 +36,10 @@
                             <color key="currentPageIndicatorTintColor" white="0.0" alpha="0.8034771127" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </pageControl>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="rCY-gZ-vtS">
-                            <rect key="frame" x="0.0" y="0.0" width="240" height="350"/>
+                            <rect key="frame" x="0.0" y="0.0" width="315" height="350"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="350" id="1C4-dd-q74"/>
-                                <constraint firstAttribute="width" constant="240" id="Hmj-tx-KZQ"/>
                             </constraints>
                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yYf-Zb-o6i">
                                 <size key="itemSize" width="50" height="50"/>
@@ -50,7 +49,7 @@
                             </collectionViewFlowLayout>
                         </collectionView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87z-2V-htE">
-                            <rect key="frame" x="205" y="0.0" width="30" height="48"/>
+                            <rect key="frame" x="280" y="0.0" width="30" height="48"/>
                             <fontDescription key="fontDescription" type="system" pointSize="30"/>
                             <state key="normal" title="✗">
                                 <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -74,6 +73,7 @@
             <constraints>
                 <constraint firstItem="oiG-EW-VSM" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ByQ-Sf-vXg"/>
                 <constraint firstItem="oiG-EW-VSM" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="RaO-U9-JxR"/>
+                <constraint firstItem="oiG-EW-VSM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="iA9-Ve-AXH"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>

@@ -75,13 +75,31 @@ final class PopupTutorialUsingCollectionView: UIViewController {
         pageControl.currentPage = 0
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        print("willLayout", collectionView.bounds.size, collectionView.frame)
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
         // update itemSize to match with the size of collectionView.
-        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.itemSize = collectionView.bounds.size
+        // I don't know why but sometimes view is not layed-out even here.
+        // And this is why I execute in DispatchQueue
+        DispatchQueue.main.async { [collectionView] in
+            guard let collectionView = collectionView else {
+                return
+            }
+            if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+                let oldSize = layout.itemSize
+                layout.itemSize = collectionView.bounds.size
+                layout.invalidateLayout()
+                
+                // keep the page
+                collectionView.contentOffset = CGPoint(x: collectionView.contentOffset.x / oldSize.width * layout.itemSize.width, y: collectionView.contentOffset.y)
+            }
         }
+        
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

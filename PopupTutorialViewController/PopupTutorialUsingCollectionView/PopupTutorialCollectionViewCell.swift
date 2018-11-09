@@ -12,6 +12,7 @@ final class PopupTutorialCollectionViewCell: UICollectionViewCell {
     static let reuseIdentifier = "PopupTutorialCollectionViewCell"
     
     /// ViewController controlling contentView.
+    /// This instance must be managed by the parent ViewController.
     private weak var _contentViewController: UIViewController?
     
     /// Setup cell using ViewController.
@@ -22,13 +23,13 @@ final class PopupTutorialCollectionViewCell: UICollectionViewCell {
     func setup(_ viewController: UIViewController, toParent parentViewController: UIViewController) {
         parentViewController.addChild(viewController)
         
-        addSubview(viewController.view)
+        contentView.addSubview(viewController.view)
         viewController.view.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            viewController.view.leadingAnchor.constraint(equalTo: leadingAnchor),
-            viewController.view.trailingAnchor.constraint(equalTo: trailingAnchor),
-            viewController.view.topAnchor.constraint(equalTo: topAnchor),
-            viewController.view.bottomAnchor.constraint(equalTo: bottomAnchor)
+            viewController.view.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            viewController.view.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            viewController.view.topAnchor.constraint(equalTo: contentView.topAnchor),
+            viewController.view.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
             ])
         
         viewController.didMove(toParent: parentViewController)
