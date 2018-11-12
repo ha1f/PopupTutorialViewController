@@ -45,8 +45,14 @@ final class PopupTutorialUsingCollectionView: UIViewController {
             closeButton?.addTarget(self, action: #selector(didTapCloseButton), for: .touchUpInside)
         }
     }
+    @IBOutlet private var bottomButton: UIButton! {
+        didSet {
+            bottomButton?.addTarget(self, action: #selector(didTapBottomButton), for: .touchUpInside)
+        }
+    }
     
     private let viewControllers: [UIViewController]
+    private var bottomButtonHandler: (() -> Void)?
     
     // MARK: - Initializers
     
@@ -73,11 +79,9 @@ final class PopupTutorialUsingCollectionView: UIViewController {
         
         pageControl.numberOfPages = viewControllers.count
         pageControl.currentPage = 0
-    }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        print("willLayout", collectionView.bounds.size, collectionView.frame)
+        pageControl.isHidden = true
+        
+        _updateBottomButton(forPage: 0)
     }
     
     override func viewDidLayoutSubviews() {
@@ -85,7 +89,7 @@ final class PopupTutorialUsingCollectionView: UIViewController {
         
         // update itemSize to match with the size of collectionView.
         // I don't know why but sometimes view is not layed-out even here.
-        // And this is why I execute in DispatchQueue
+        // And this is why I execute in DispatchQueue.main.async
         DispatchQueue.main.async { [collectionView] in
             guard let collectionView = collectionView else {
                 return
@@ -99,11 +103,45 @@ final class PopupTutorialUsingCollectionView: UIViewController {
                 collectionView.contentOffset = CGPoint(x: collectionView.contentOffset.x / oldSize.width * layout.itemSize.width, y: collectionView.contentOffset.y)
             }
         }
-        
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+}
+
+extension PopupTutorialUsingCollectionView {
+    private static func pageIndex(from scrollView: UIScrollView) -> Int {
+        return Int(round(scrollView.contentOffset.x / scrollView.bounds.width))
+    }
+    
+    private func currentIndex() -> Int {
+        return PopupTutorialUsingCollectionView.pageIndex(from: collectionView)
+    }
+    
+    private func moveToNextPage() {
+        guard let collectionView = self.collectionView else {
+            return
+        }
+        let nextIndex = currentIndex() + 1
+        if nextIndex < collectionView.numberOfItems(inSection: 0) {
+            collectionView.scrollToItem(at: IndexPath(row: nextIndex, section: 0), at: .centeredHorizontally, animated: true)
+        }
+    }
+    
+    private func _updateBottomButton(forPage pageIndex: Int) {
+        if (pageIndex >= viewControllers.count - 1) {
+            // last page
+            bottomButton.setTitle("Close", for: .normal)
+            bottomButtonHandler = { [weak self] in
+                self?.dismiss(animated: true, completion: nil)
+            }
+        } else {
+            bottomButton.setTitle("Next", for: .normal)
+            bottomButtonHandler = { [weak self] in
+                self?.moveToNextPage()
+            }
+        }
     }
 }
 
@@ -114,13 +152,20 @@ extension PopupTutorialUsingCollectionView {
     func didTapCloseButton() {
         dismiss(animated: true, completion: nil)
     }
+    
+    @objc
+    func didTapBottomButton() {
+        bottomButtonHandler?()
+    }
 }
 
 extension PopupTutorialUsingCollectionView: UICollectionViewDelegate {
     // MARK: - UICollectionViewDelegate
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        pageControl.currentPage = Int(round(scrollView.contentOffset.x / scrollView.bounds.width))
+        let currentPageIndex = PopupTutorialUsingCollectionView.pageIndex(from: scrollView)
+        pageControl.currentPage = currentPageIndex
+        _updateBottomButton(forPage: currentPageIndex)
     }
 }
 

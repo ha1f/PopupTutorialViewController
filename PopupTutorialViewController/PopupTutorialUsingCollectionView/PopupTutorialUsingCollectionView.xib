@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopupTutorialUsingCollectionView" customModule="PopupTutorialViewController" customModuleProvider="target">
             <connections>
+                <outlet property="bottomButton" destination="H8y-uq-i0p" id="p7k-xc-q7M"/>
                 <outlet property="closeButton" destination="87z-2V-htE" id="E2B-pk-kPU"/>
                 <outlet property="collectionView" destination="rCY-gZ-vtS" id="3mc-mT-K0e"/>
                 <outlet property="containerView" destination="oiG-EW-VSM" id="Jkp-UN-Bfr"/>
@@ -24,30 +25,50 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oiG-EW-VSM">
-                    <rect key="frame" x="30" y="136" width="315" height="395"/>
+                    <rect key="frame" x="30" y="112.5" width="315" height="442"/>
                     <subviews>
-                        <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="HQX-60-GrV">
-                            <rect key="frame" x="107.5" y="358" width="100" height="37"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="h6v-yk-CyK">
+                            <rect key="frame" x="0.0" y="0.0" width="315" height="442"/>
+                            <subviews>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="rCY-gZ-vtS">
+                                    <rect key="frame" x="0.0" y="0.0" width="315" height="350"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="350" id="1C4-dd-q74"/>
+                                    </constraints>
+                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yYf-Zb-o6i">
+                                        <size key="itemSize" width="50" height="50"/>
+                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                </collectionView>
+                                <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="HQX-60-GrV">
+                                    <rect key="frame" x="107.5" y="350" width="100" height="37"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="37" id="2wU-xk-X7z"/>
+                                        <constraint firstAttribute="width" constant="100" id="8ep-iI-37W"/>
+                                    </constraints>
+                                    <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="currentPageIndicatorTintColor" white="0.0" alpha="0.8034771127" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </pageControl>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8y-uq-i0p">
+                                    <rect key="frame" x="0.0" y="387" width="315" height="55"/>
+                                    <color key="backgroundColor" red="0.0" green="0.7923661470413208" blue="0.29704803228378296" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="55" id="Yvk-gC-Yxa"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <state key="normal" title="Button">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                </button>
+                            </subviews>
                             <constraints>
-                                <constraint firstAttribute="height" constant="37" id="2wU-xk-X7z"/>
-                                <constraint firstAttribute="width" constant="100" id="8ep-iI-37W"/>
+                                <constraint firstItem="rCY-gZ-vtS" firstAttribute="width" secondItem="h6v-yk-CyK" secondAttribute="width" id="QXJ-m8-Fdn"/>
+                                <constraint firstItem="H8y-uq-i0p" firstAttribute="width" secondItem="h6v-yk-CyK" secondAttribute="width" id="uo2-VZ-Aea"/>
                             </constraints>
-                            <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <color key="currentPageIndicatorTintColor" white="0.0" alpha="0.8034771127" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </pageControl>
-                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="rCY-gZ-vtS">
-                            <rect key="frame" x="0.0" y="0.0" width="315" height="350"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="350" id="1C4-dd-q74"/>
-                            </constraints>
-                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yYf-Zb-o6i">
-                                <size key="itemSize" width="50" height="50"/>
-                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            </collectionViewFlowLayout>
-                        </collectionView>
+                        </stackView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87z-2V-htE">
                             <rect key="frame" x="280" y="0.0" width="30" height="48"/>
                             <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -58,14 +79,12 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="rCY-gZ-vtS" secondAttribute="trailing" id="0bG-MF-4g5"/>
+                        <constraint firstItem="h6v-yk-CyK" firstAttribute="leading" secondItem="oiG-EW-VSM" secondAttribute="leading" id="8G6-lr-Qta"/>
                         <constraint firstItem="87z-2V-htE" firstAttribute="top" secondItem="oiG-EW-VSM" secondAttribute="top" id="9S9-Lx-86G"/>
-                        <constraint firstItem="HQX-60-GrV" firstAttribute="top" secondItem="rCY-gZ-vtS" secondAttribute="bottom" constant="8" id="NpC-yP-mPr"/>
-                        <constraint firstAttribute="bottom" secondItem="HQX-60-GrV" secondAttribute="bottom" id="Qbs-dj-O87"/>
+                        <constraint firstItem="h6v-yk-CyK" firstAttribute="top" secondItem="oiG-EW-VSM" secondAttribute="top" id="Ky1-NK-itx"/>
                         <constraint firstAttribute="trailing" secondItem="87z-2V-htE" secondAttribute="trailing" constant="5" id="Sa9-vN-Pba"/>
-                        <constraint firstItem="HQX-60-GrV" firstAttribute="centerX" secondItem="oiG-EW-VSM" secondAttribute="centerX" id="g2o-RV-QeN"/>
-                        <constraint firstItem="rCY-gZ-vtS" firstAttribute="top" secondItem="oiG-EW-VSM" secondAttribute="top" id="k4W-U6-qiv"/>
-                        <constraint firstItem="rCY-gZ-vtS" firstAttribute="leading" secondItem="oiG-EW-VSM" secondAttribute="leading" id="rTA-4g-1AS"/>
+                        <constraint firstAttribute="bottom" secondItem="h6v-yk-CyK" secondAttribute="bottom" id="U6e-Mv-rdl"/>
+                        <constraint firstAttribute="trailing" secondItem="h6v-yk-CyK" secondAttribute="trailing" id="rO2-qM-vRk"/>
                     </constraints>
                 </view>
             </subviews>
